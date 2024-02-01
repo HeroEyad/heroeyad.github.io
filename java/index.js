@@ -1,16 +1,22 @@
+document.addEventListener("DOMContentLoaded", function() {
+  var buttonContainer = document.getElementById("buttonContainer");
 
-const aboutMeButton = document.createElement("button");
-aboutMeButton.textContent = "About Me";
-document.body.appendChild(aboutMeButton);
+  var buttons = [
+      { text: "Socials", url: "socials.html" }
+  ];
 
-const commissionsButton = document.createElement("button");
-commissionsButton.textContent = "Commissions";
-document.body.appendChild(commissionsButton);
+  buttons.forEach(function(buttonInfo) {
+      var button = document.createElement("button");
+      
+      button.textContent = buttonInfo.text;
 
-aboutMeButton.addEventListener("click", () => {
-  window.open("aboutme.html", "_blank");
-});
+      button.classList.add("custom-button");
+      button.style.backgroundColor = buttonInfo.color;
 
-commissionsButton.addEventListener("click", () => {
-  window.open("commissions.html", "_blank");
+      button.addEventListener("click", function() {
+          window.location.href = buttonInfo.url;
+      });
+
+      buttonContainer.appendChild(button);
+  });
 });

@@ -1,0 +1,28 @@
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600vh;
+    @font-face {
+        font-family: 'vcr';
+        src: url('fonts/vcr.ttf') format('truetype');
+    }
+}
+
+.custom-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'vcr', sans-serif;
+    font-weight: bold;
+    background-color: blue; /* Background color */
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: darkblue; /* Darker background color on hover */
+}

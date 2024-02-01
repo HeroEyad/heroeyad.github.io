@@ -1,0 +1,38 @@
+#buttonContainer {
+    padding-left: 20px;
+    @font-face {
+        font-family: 'vcr';
+        src: url('fonts/vcr.ttf') format('truetype');
+    }
+}
+
+.custom-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'vcr', sans-serif;
+    font-weight: bold;
+    background-color: black; /* Background color */
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: darkblue;
+}
+
+
+#button1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#button2 {
+    position: absolute;
+    top: 50px;
+    left: 20px; 
+}
