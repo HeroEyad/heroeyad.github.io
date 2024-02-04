@@ -7,6 +7,23 @@ document.addEventListener("DOMContentLoaded", function() {
       { text: "Socials", url: "socials.html" }
   ];
 
+  function createKofiWidget() {
+    var kofiScript = document.createElement("script");
+    kofiScript.src = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
+    kofiScript.async = true;
+
+    kofiScript.onload = function() {
+      kofiWidgetOverlay.draw('heroeyad', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#323842',
+        'floating-chat.donateButton.text-color': '#fff'
+      });
+    };
+
+    return kofiScript;
+  }
+
   audioButton.addEventListener("click", function() {
     if(audioPlay.paused) {
         audioPlay.play();
@@ -29,4 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       buttonContainer.appendChild(button);
   });
+
+  var kofiButton = createKofiWidget();
+  buttonContainer.appendChild(kofiButton);
 });
