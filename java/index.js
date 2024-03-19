@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
   var buttonContainer = document.getElementById("buttonContainer");
 
   var buttons = [
-      { text: "Socials", url: "socials.html" }
+      { text: "Socials", url: "socials.html" },
+      { text: "Examples", url: "https://twitter.com/HeroEyad_/status/1704444656140849251?t=-EeseU-yP3LBYEZJOXkJdA&s=19 "},
+      { text: "My OC", url: "oc.html"}
   ];
 
   function createKofiWidget() {
@@ -45,6 +47,8 @@ document.addEventListener("DOMContentLoaded", function() {
       });
 
       buttonContainer.appendChild(button);
+      
+      button.style.margin = "10px";
   });
 
   var kofiButton = createKofiWidget();
