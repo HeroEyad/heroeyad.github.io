@@ -1,82 +1,69 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <style>
-            @font-face {
-                font-family: 'vcr';
-                src: url('fonts/vcr.ttf') format('truetype');
-            }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <meta property="og:title" content="HeroEyad's Cool Website!!"/>
+    <meta property="og:description" content="check this out my cool new website!!!"/>
+    <meta property="og:image" content="https://heroeyad.github.io/pics/header.jpg"/>
+    <meta property="og:url" content="heroeyad.github.io"/>
+    <meta name="twitter:card" content="https://heroeyad.github.io/pics/header.jpg">
+    <meta name="twitter:title" content="HeroEyad's Cool Website!!">
+    <meta name="twitter:description" content="check this out my cool new website!!!">
+    <link rel="icon" type="image/png" href="pics/icon.png">
+    <link rel="stylesheet" href="background/reset.css">
+    <link rel="stylesheet" href="background/background.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="background/button.css">
+    <style>
+        @font-face {
+        font-family: 'vcr';
+        src: url('fonts/vcr.ttf') format('truetype');
+    }
+    </style>
+</head>
+<body>
+    <div id="loadingOverlay">
+        <img src="pics/eydoo.gif" alt="Loading...">
+        <p>Loading...</p>
+    </div>
+
+    <div id="overlay">
+        <div>
+            <center>
+                <p>Welcome to HeroEyad's Cool Website!</p><br>
+                <p>WARNING: Music will start playing on clicking Start</p><br>
+                <p>If you want to mute it, Press the picture above the Name</p>
+                <button id="startButton">Start</button>
+            </center>
+        </div>
+    </div>
     
-            h1 {
-                font-family: 'vcr', sans-serif;
-            }
+    <audio id="audio" src="music/an_undecided_secret.mp3" type="audio/mpeg" loop></audio>
 
-            h2 {
-                font-family: 'vcr', sans-serif;
-            }
+    <center>
+        <img src="pics/header.jpg" id="me" width="400" height="400" alt="HeroEyad">
+        <h1><u>HeroEyad</u></h1>
+        <h2><u>Programmer/Coder</u></h2>
+        <h3>Click my pic for a surprise!</h3>
+        <p>
+            Hello! I'm Hero, a 16-year-old programmer specializing in Haxe, JS, Lua, HTML, and Python!<br><br>
+            Worked on: Hedgehog Chaos (Lead Coder and Director), Schwiftying on a Friday Night (Rick and Morty Mod), Super Funkin' Galaxy, Tune-Takedown (Minor Programming Fixes), and Hypno Lullaby Z-Sidez<br><br>
+            Not just that, I also work on games!!<br><br>
+            Like Roblox! I don't really work on many Roblox games, but I know LuaU.<br><br><br>
+            I also develop Discord bots! I'm trying to improve myself a bit.<br><br>
+            You can check out my social media and stuff below if you want. I mostly just post memes or my actual work of coding!<br><br>
+            BG MADE BY <a href="https://twitter.com/TheRobot_Bobby">Bobby the Robot</a><br><br>
+            MUSIC MADE BY <a href="https://www.youtube.com/@Bitto1070">Bitto</a><br><br>
+            COOL EYDOOO GIF BY <a href="https://x.com/gumbalino">Gumbalino</a>
+        </p>
+        <div id="buttonContainer">
+            
+        </div>
+    </center>
 
-            h3 {
-                font-family: 'vcr', sans-serif;
-            }
-
-            p {
-                font-family: 'vcr', sans-serif;
-                font-size: 32px;
-            }
-        </style>
-        <link rel="stylesheet" href="background/reset.css"></link>
-        <link rel="stylesheet" href="background/background.css"></link>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
-        <meta property="og:title" content="HeroEyad's Cool Website!!"/>
-        <meta property="og:description" content="check this out my cool new website!!!"/>
-        <meta property="og:image" content="https://heroeyad.github.io/pics/header.jpg"/>
-        <meta property="og:url" content="heroeyad.github.io"/>
-        <meta name="twitter:card" content="https://heroeyad.github.io/pics/header.jpg">
-        <meta name="twitter:title" content="HeroEyad's Cool Website!!">
-        <meta name="twitter:description" content="check this out my cool new website!!!">
-        <link rel="icon" type="image/png" href="pics/icon.png">
-        <link rel="stylesheet" type="text/css" href="background/button.css">
-    </head>
-    <body>
-        <audio id="audio" src="music/an_undecided_secret.mp3" type="audio/mpeg" loop>
-            Your browser does not support the audio element.
-        </audio>
-
-        <center>
-        </style>
-            <br><br>
-            <img src="pics/header.jpg" id="me" width="400" height="400">
-            <h1><u>HeroEyad</u></h1>
-            <h2><u>Programmer/Coder</u></h2>
-            <h3><br>Click my pic for a suprise!</h3></h3>
-            <p>
-                Hello! I'm Hero, a 16-year-old programmer specializing in Haxe, JS, Lua, HTML, and Python! <br><br>
-
-                Worked on: Hedgehog Chaos (Lead Coder and Director), Schwiftying on a Friday Night (Rick and Morty Mod), Super Funkin' Galaxy, Tune-Takedown (Minor Programming Fixes), and Hypno Lullaby Z-Sidez <br><br>
-                
-                Not just that, I also work on games!! <br><br>
-                
-                Like Roblox! I don't really work on many Roblox games, but I know LuaU. <br><br><br>
-                
-                I also develop Discord bots! I'm trying to improve myself a bit.
-                
-                You can check out my social media and stuff below if you want. I mostly just post memes or my actual work of coding!
-                
-                <br><br>
-
-                BG MADE BY <a href="https://twitter.com/TheRobot_Bobby">Bobby the Robot</a>
-
-                <br><br>
-
-                MUSIC MADE BY <a href="https://www.youtube.com/@Bitto1070">Bitto</a>
-                <div id="buttonContainer">
-                </div>
-                <script src="java/index.js"></script>
-            </p>
-            <br>
-            <br><br>
-            <br>
-        </center>
+    <script src="java/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
 </html>
