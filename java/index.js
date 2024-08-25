@@ -22,7 +22,9 @@ window.onload = function () {
         { url: 'pics/icon.png', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' },
         { url: 'pics/header.jpg', credit: 'Artwork by Brayden023', link: 'https://x.com/Brayden0238' },
         { url: 'pics/hero.png', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' },
-        { url: 'pics/um.jpg', credit: 'Artwork by GasterManiaNG', link: 'https://x.com/gastermanialol' }
+        { url: 'pics/um.jpg', credit: 'Artwork by GasterManiaNG', link: 'https://x.com/gastermanialol' },
+        { url: 'pics/idk.png', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' },
+        { url: 'pics/rhythm.png', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' }
     ];
 
     var randomImage = images[Math.floor(Math.random() * images.length)];
