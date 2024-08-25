@@ -78,6 +78,23 @@ function fadeInMusic(duration = 2000) {
     }, interval);
 }
 
+function fadeOutMusic(duration = 2000) {
+    const audio = document.getElementById('backgroundMusic');
+    let volume = audio.volume;
+    const step = 0.01;
+    const interval = duration / (volume / step);
+
+    const fadeInterval = setInterval(() => {
+        if (volume > 0) {
+            volume -= step;
+            audio.volume = Math.max(volume, 0);
+        } else {
+            clearInterval(fadeInterval);
+            audio.pause();
+        }
+    }, interval);
+}
+
 function startAnimations() {
     const audio = document.getElementById('backgroundMusic');
     audio.play().then(() => {
@@ -97,7 +114,7 @@ function playMusic() {
 
 function pauseMusic() {
     const audio = document.getElementById('backgroundMusic');
-    audio.pause();
+    fadeOutMusic(2000); //OK SO HOW COME WHEN THE FUCKING AUDIO.PAUSE DOESN'T WORK WHEN I SET IT HERE BUT ON THE FADEOUTMUSIC ITS ALREADY WORKING VERY VERY WELL OHOHOHOHO IM KMS
 }
 
 document.addEventListener('DOMContentLoaded', () => {
