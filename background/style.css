@@ -8,14 +8,18 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #0000ff, #00ffff);
+    background-image: url("eydoo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
 
 /* Particle Effect */
 .particle {
     width: 5px;
     height: 5px;
-    background: black;
+    background: #ff6a00;
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
