@@ -1,61 +1,69 @@
-document.addEventListener("DOMContentLoaded", function() {
-  var audioPlay = document.getElementById("audio");
-  var audioButton = document.getElementById("me");
-  var buttonContainer = document.getElementById("buttonContainer");
-  var overlay = document.getElementById("overlay");
-  var startButton = document.getElementById("startButton");
-  var loadingOverlay = document.getElementById("loadingOverlay");
+function createParticle(e) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    document.body.appendChild(particle);
 
-  var buttons = [
-      { text: "Socials", url: "socials.html" },
-      { text: "Examples", url: "https://twitter.com/HeroEyad_/status/1704444656140849251?t=-EeseU-yP3LBYEZJOXkJdA&s=19"},
-      { text: "My OC", url: "oc.html"}
-  ];
+    const x = e.clientX;
+    const y = e.clientY;
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
 
-  setTimeout(function() {
-    loadingOverlay.style.display = "none";
-    overlay.style.display = "flex";
-}, 5000);
+    particle.style.animation = 'fall 2s linear forwards';
+    particle.addEventListener('animationend', () => {
+        particle.remove();
+    });
+}
 
-  startButton.addEventListener("click", function() {
-      overlay.style.display = "none";
-      audioPlay.play().catch(function(error) {
-          console.log("Autoplay was prevented. User interaction is required.");
-      });
-  });
+document.addEventListener('mousemove', createParticle);
 
-  audioButton.addEventListener("click", function() {
-      if(audioPlay.paused) {
-          audioPlay.play();
-      } else {
-          audioPlay.pause();
-      }
-  });
+function startAnimations() {
+    const audio = document.getElementById('backgroundMusic');
+    audio.play().then(() => {
+        document.querySelector('.overlay').style.display = 'none';
+        document.querySelector('.card').style.display = 'block';
+    });
+    syncMusicPlayer();
+}
 
-  buttons.forEach(function(buttonInfo) {
-      var button = document.createElement("button");
-      button.textContent = buttonInfo.text;
-      button.classList.add("custom-button");
+// Music Control
+function playMusic() {
+    const audio = document.getElementById('backgroundMusic');
+    audio.play();
+}
 
-      button.addEventListener("click", function() {
-          window.location.href = buttonInfo.url;
-      });
+function pauseMusic() {
+    const audio = document.getElementById('backgroundMusic');
+    audio.pause();
+}
 
-      buttonContainer.appendChild(button);
-  });
+function syncMusicPlayer() {
+    const audio = document.getElementById('backgroundMusic');
+    const progress = document.getElementById('musicProgress');
 
-  var kofiScript = document.createElement("script");
-  kofiScript.src = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
-  kofiScript.async = true;
+    audio.addEventListener('timeupdate', () => {
+        progress.value = (audio.currentTime / audio.duration) * 100;
+    });
 
-  kofiScript.onload = function() {
-      kofiWidgetOverlay.draw('heroeyad', {
-          'type': 'floating-chat',
-          'floating-chat.donateButton.text': 'Support me',
-          'floating-chat.donateButton.background-color': '#323842',
-          'floating-chat.donateButton.text-color': '#fff'
-      });
-  };
+    progress.addEventListener('input', () => {
+        audio.currentTime = (progress.value / 100) * audio.duration;
+    });
+}
 
-  buttonContainer.appendChild(kofiScript);
+document.addEventListener('DOMContentLoaded', () => {
+    const youtube = document.getElementById('youtube');
+    const twitter = document.getElementById('twitter');
+    const github = document.getElementById('github');
+
+
+    youtube.addEventListener('click', () => {
+        window.location.href = 'https://www.youtube.com/c/HeroEyad';
+    });
+
+    twitter.addEventListener('click', () => {
+        window.location.href = 'https://x.com/HeroEyad_';
+    });
+
+    github.addEventListener('click', () => {
+        window.location.href = 'https://github.com/HeroEyad';
+    })
 });
