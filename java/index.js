@@ -24,7 +24,7 @@ window.onload = function () {
         { url: 'pics/hero.png', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' },
         { url: 'pics/um.jpg', credit: 'Artwork by GasterManiaNG', link: 'https://x.com/gastermanialol' },
         { url: 'pics/idk.png', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' },
-        { url: 'pics/rhythm.png', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' }
+        { url: 'pics/rhythm.jpg', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' }
     ];
 
     var randomImage = images[Math.floor(Math.random() * images.length)];
