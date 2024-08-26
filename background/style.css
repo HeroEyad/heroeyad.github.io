@@ -56,6 +56,26 @@ body {
     z-index: 100;
 }
 
+@keyframes bye {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* Particle Disable Log */
+.particle-disable {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
 /* Centering the Card */
 .card {
     background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
@@ -129,17 +149,32 @@ body {
 /* Icon Hover Effect */
 .social-icons {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin: 20px 0;
 }
 
 .social-icons div {
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
+    /* that makes the icons so freaking far from each other */
+    /* if u encounter issues then re add the inline block */
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
+@keyframes smolMove {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.socialIco {
+    animation: 1s smolMove ease-out;
+    animation-fill-mode: forwards;
+}
 .social-icons div:hover {
     transform: scale(1.2);
 }

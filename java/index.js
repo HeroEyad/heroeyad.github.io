@@ -1,4 +1,7 @@
+var particles = true;
+
 function createParticle(e) {
+    if (!particles) return;
     const particle = document.createElement('div');
     particle.className = 'particle';
     document.body.appendChild(particle);
@@ -14,6 +17,14 @@ function createParticle(e) {
     });
 }
 
+document.onkeydown = function (e) {
+    if (e.code === 'KeyP') {
+        particles = !particles;
+        document.querySelectorAll('.particle').forEach(particle => particle.remove());
+        document.querySelector('.particle-disable').style.display = 'block';
+        setTimeout(() => {document.querySelector('.particle-disable').style.display = 'none';}, 500);
+    }
+}
 window.onload = function () {
     var images = [
         { url: 'pics/eydoo.gif', credit: 'Artwork by Gumbalino', link: 'https://twitter.com/gumbalino' },
