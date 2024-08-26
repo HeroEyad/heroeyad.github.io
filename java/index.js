@@ -35,7 +35,8 @@ window.onload = function () {
         { url: 'pics/hero.png', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' },
         { url: 'pics/um.jpg', credit: 'Artwork by GasterManiaNG', link: 'https://x.com/gastermanialol' },
         { url: 'pics/idk.png', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' },
-        { url: 'pics/rhythm.jpg', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' }
+        { url: 'pics/rhythm.jpg', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' },
+        { url: 'pics/Well.jpg', credit: 'Artwork by herofan21500', link: 'https://soundcloud.com/no-one-798324826'}
     ];
 
     var randomImage = images[Math.floor(Math.random() * images.length)];
@@ -45,7 +46,7 @@ window.onload = function () {
     artistCreditElement.innerText = randomImage.credit;
     artistCreditElement.href = randomImage.link;
 
-    var Well = ['Gumbalino', 'Ame', 'KirbyTheDemon', 'Bitto', 'Brayden023', 'GasterManiaNG'];
+    var Well = ['Gumbalino', 'Ame', 'KirbyTheDemon', 'Bitto', 'Brayden023', 'GasterManiaNG', 'herofan21500'];
 
     Well.forEach(function (artist) {
         if (randomImage.credit.includes(artist)) {
@@ -110,8 +111,21 @@ function fadeOutMusic(duration = 2000) {
 
 function startAnimations() {
     const audio = document.getElementById('backgroundMusic');
+    const musicTitle = document.getElementById('musicTitle');
+    const musicFiles = ['music/an_undecided_secret.mp3', 'music/moveitboy.mp3', 'music/eyadsides.mp3'];
+    const selectedMusic = musicFiles[Math.floor(Math.random() * musicFiles.length)];
+    audio.src = selectedMusic; 
+
+    if (selectedMusic.includes('an_undecided_secret.mp3')) {
+        musicTitle.textContent = 'Itny';
+    } else if (selectedMusic.includes('moveitboy.mp3')) {
+        musicTitle.textContent = 'Move it Boy';
+    } else if (selectedMusic.includes('eyadsides.mp3')) {
+        musicTitle.textContent = 'Menu';
+    }
+
     audio.play().then(() => {
-        fadeInMusic(2000); 
+        fadeInMusic(2000);
         document.querySelector('.overlay').style.display = 'none';
         document.querySelector('.card').style.display = 'block';
     });
