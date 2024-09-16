@@ -36,7 +36,8 @@ window.onload = function () {
         { url: 'pics/um.jpg', credit: 'Artwork by GasterManiaNG', link: 'https://x.com/gastermanialol' },
         { url: 'pics/idk.png', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' },
         { url: 'pics/rhythm.jpg', credit: 'Artwork by Bitto', link: 'https://www.youtube.com/@Bitto1070' },
-        { url: 'pics/Well.jpg', credit: 'Artwork by herofan21500', link: 'https://soundcloud.com/no-one-798324826'}
+        { url: 'pics/Well.jpg', credit: 'Artwork by herofan21500', link: 'https://soundcloud.com/no-one-798324826'},
+        { url: 'pics/thisispeakbrowtf.jpg', credit: 'Artwork by ShultzNG', link: 'https://x.com/ShultzNG'}
     ];
 
     var randomImage = images[Math.floor(Math.random() * images.length)];
@@ -46,7 +47,7 @@ window.onload = function () {
     artistCreditElement.innerText = randomImage.credit;
     artistCreditElement.href = randomImage.link;
 
-    var Well = ['Gumbalino', 'Ame', 'KirbyTheDemon', 'Bitto', 'Brayden023', 'GasterManiaNG', 'herofan21500'];
+    var Well = ['Gumbalino', 'Ame', 'KirbyTheDemon', 'Bitto', 'Brayden023', 'GasterManiaNG', 'herofan21500', 'ShultzNG'];
 
     Well.forEach(function (artist) {
         if (randomImage.credit.includes(artist)) {
