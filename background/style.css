@@ -87,9 +87,12 @@ body {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 1s ease-out forwards;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 1;
+    overflow: hidden;
     display: none;
+    transition: 1s height cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 @keyframes fadeIn {
@@ -99,18 +102,43 @@ body {
     }
 }
 
+.descContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-10px);
+}
+
+@keyframes thePFP {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        scale: 0.9;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        scale: 1;
+    }
+}
 .card img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     display: block;
     margin: 0 auto;
+    animation: thePFP 1s ease-out forwards;
+    animation-fill-mode: forwards;
     /* Center the image */
 }
 
 .username {
     font-size: 1.8em;
     margin: 10px 0;
+}
+
+* {
+    font-family: 'VCR OSD Mono', sans-serif;
 }
 
 /* Typing animation */
@@ -122,7 +150,7 @@ body {
     overflow: hidden;
     border-right: 2px solid white;
     /* Cursor effect */
-    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 @keyframes typing {
     from {
@@ -211,9 +239,8 @@ body {
     margin-top: 10px;
     position: relative;
     z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    display: block;
 }
 
 .music-player div {
