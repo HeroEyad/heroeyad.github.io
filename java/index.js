@@ -76,7 +76,10 @@ function syncMusicPlayer() {
     });
 }
 
+var aintervals = [];
+
 function fadeInMusic(duration = 2000) { 
+    aintervals.forEach(interval => clearInterval(interval));
     const audio = document.getElementById('backgroundMusic');
     let volume = 0;
     audio.volume = 0;
@@ -91,9 +94,13 @@ function fadeInMusic(duration = 2000) {
             clearInterval(fadeInterval);
         }
     }, interval);
+
+    aintervals.push(fadeInterval);
 }
 
 function fadeOutMusic(duration = 2000) {
+    aintervals.forEach(interval => clearInterval(interval));
+
     const audio = document.getElementById('backgroundMusic');
     let volume = audio.volume;
     const step = 0.01;
@@ -108,41 +115,28 @@ function fadeOutMusic(duration = 2000) {
             audio.pause();
         }
     }, interval);
+
+    aintervals.push(fadeInterval);
 }
 
 function startAnimations() {
-    const audio = document.getElementById('backgroundMusic');
-    const musicTitle = document.getElementById('musicTitle');
-    const musicFiles = ['music/an_undecided_secret.mp3', 'music/moveitboy.mp3', 'music/eyadsides.mp3'];
-    const selectedMusic = musicFiles[Math.floor(Math.random() * musicFiles.length)];
-    audio.src = selectedMusic; 
-
-    if (selectedMusic.includes('an_undecided_secret.mp3')) {
-        musicTitle.textContent = 'Itny';
-    } else if (selectedMusic.includes('moveitboy.mp3')) {
-        musicTitle.textContent = 'Move it Boy';
-    } else if (selectedMusic.includes('eyadsides.mp3')) {
-        musicTitle.textContent = 'Menu';
-    }
-
-    audio.play().then(() => {
-        fadeInMusic(2000);
-        document.querySelector('.overlay').style.display = 'none';
-        document.querySelector('.card').style.display = 'block';
-    });
-    syncMusicPlayer();
+    document.querySelector('.card').style.display = 'block';
 }
 
 function playMusic() {
+    document.querySelector('.playMus').style.display = 'none';
+    document.querySelector('.pauseMus').style.display = 'block';
     const audio = document.getElementById('backgroundMusic');
     audio.volume = 0; 
     audio.play();
-    fadeInMusic(2000);
+    fadeInMusic(1500);
 }
 
 function pauseMusic() {
+    document.querySelector('.playMus').style.display = 'block';
+    document.querySelector('.pauseMus').style.display = 'none';
     const audio = document.getElementById('backgroundMusic');
-    fadeOutMusic(2000); //OK SO HOW COME WHEN THE FUCKING AUDIO.PAUSE DOESN'T WORK WHEN I SET IT HERE BUT ON THE FADEOUTMUSIC ITS ALREADY WORKING VERY VERY WELL OHOHOHOHO IM KMS
+    fadeOutMusic(1500); //OK SO HOW COME WHEN THE FUCKING AUDIO.PAUSE DOESN'T WORK WHEN I SET IT HERE BUT ON THE FADEOUTMUSIC ITS ALREADY WORKING VERY VERY WELL OHOHOHOHO IM KMS
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -163,3 +157,49 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'https://github.com/HeroEyad';
     });
 });
+
+startAnimations();
+
+document.onclick = function () {
+    const audio = document.getElementById('backgroundMusic');
+    const musicTitle = document.getElementById('musicTitle');
+    const musicFiles = ['music/an_undecided_secret.mp3', 'music/moveitboy.mp3', 'music/eyadsides.mp3'];
+    const selectedMusic = musicFiles[Math.floor(Math.random() * musicFiles.length)];
+    audio.src = selectedMusic; 
+
+    if (selectedMusic.includes('an_undecided_secret.mp3')) {
+        musicTitle.textContent = 'Itny';
+    } else if (selectedMusic.includes('moveitboy.mp3')) {
+        musicTitle.textContent = 'Move it Boy';
+    } else if (selectedMusic.includes('eyadsides.mp3')) {
+        musicTitle.textContent = 'Menu';
+    }
+
+    document.querySelector('.playMus').style.display = 'none';
+    document.querySelector('.pauseMus').style.display = 'block';
+    document.querySelector('.card').style.height = '500px';
+    audio.play().then(() => {
+        fadeInMusic(2000);
+    });
+
+    document.querySelector('.music-player').style.display = 'block';
+    document.onclick = null;
+}
+
+window.onblur = function () {
+    try {
+        pauseMusic();
+    }
+    catch (e) {
+        console.error(e);
+    }
+}
+
+window.onfocus = function () {
+    try {
+        playMusic();
+    }
+    catch (e) {
+        console.error(e);
+    }
+}

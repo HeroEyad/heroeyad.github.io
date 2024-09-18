@@ -19,22 +19,15 @@
     <link rel="icon" type="image/png" href="pics/icon.png">
     <title>HeroEyad_'s Website</title>
     <link href="background/style.css" rel="stylesheet" />
-    <script src="java/index.js"></script>
 </head>
 
 <body>
-
-    <div class="overlay" onclick="startAnimations()">
-        <div style="text-align: center;">
-        <p>Click Me to Start</p>
-        <p style="font-size: small; opacity: 0.5;">(Press P to disable particles)</p>
-        </div>
-    </div>
-
-    <div class="card">
+    <div class="card" style="height: 350px;">
         <img id="profilePicture" src="pics/eydoo.gif" alt="Profile Picture">
         <div class="username" id="user">HeroEyad_</div>
-        <div class="description">Programmer</div>
+        <div class="descContainer">
+            <div class="description">Programmer</div>
+        </div>
         <a id="artistCredit" class="credit" href="#" target="_blank">Artwork by Gumbalino</a> <!-- Changed to an anchor tag -->
         <div class="social-icons">
             <div id="youtube">
@@ -59,16 +52,20 @@
                 <div class="tooltip">GitHub</div>
             </div>
         </div>
-        <div class="music-player">
+        <div class="music-player" style="display: none;">
             <div id="musicTitle"></div>
             <input type="range" id="musicProgress" min="0" max="100" value="0">
             <div>
-                <svg onclick="playMusic()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                </svg>
-                <svg onclick="pauseMusic()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M6 19h4V5H6zm8 0h4V5h-4z" />
-                </svg>
+                <div class="playMus">
+                    <svg onclick="playMusic()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </div>
+                <div class="pauseMus">
+                    <svg onclick="pauseMusic()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M6 19h4V5H6zm8 0h4V5h-4z" />
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
@@ -86,6 +83,8 @@
     'floating-chat.donateButton.text-color': '#fff'
   });
 </script>
+
+<script src="java/index.js"></script>
 </body>
 
 </html>
