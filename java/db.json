@@ -1,0 +1,32 @@
+[
+    {
+        "link": "https://github.com/ShadowMario/FNF-PsychEngine/releases/download/1.0/PsychEngine-Windows64.zip",
+        "name": "Psych Engine",
+        "icon": "psych",
+        "author": "ShadowMario"
+    },
+    {
+        "link": "https://nightly.link/FNF-CNE-Devs/CodenameEngine/workflows/windows/main/Codename%20Engine.zip",
+        "name": "Codename Engine",
+        "icon": "codename",
+        "author": "Lunarcleint, Ne_Eo, WizardMantis441, Frakits, Nex_isDumb"
+    },
+    {
+        "link": "https://github.com/KadeArchive/Kade-Engine/releases/download/1.8/Kade.Engine.1.8.7z",
+        "name": "Kade Engine",
+        "icon": "kade",
+        "author": "KadeDev"
+    },
+    {
+        "link": "https://github.com/ThatRozebudDude/FPS-Plus-Public/releases/download/v6.0.1/fpsplus_v6_0_1.zip",
+        "name": "FPS Plus",
+        "icon": "fps",
+        "author": "Rozebud"
+    },
+    {
+        "link": "https://github.com/Psych-Slice/P-Slice/releases/download/2.0.1/P-Slice.1.0.windows.zip",
+        "name": "P-Slice Engine",
+        "icon": "p",
+        "author": "Mikolka9144 & Psych Engine Team"
+    }
+]
