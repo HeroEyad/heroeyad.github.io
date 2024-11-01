@@ -1,6 +1,7 @@
 {
     "execName": ["KadeEngine", "PsychEngine", "Funkin", "FunkinFPSPlus", "PSlice"],
     "formalName": ["Kade Engine", "Psych Engine", "VSlice / Base Game", "FPS Plus", "P-Slice Engine"],
+    "icons": ["ke", "psych", "base", "plus", "p"],
     "engines": [
         {
             "name": "Kade Engine 1.8 (DEPRECATED)",
