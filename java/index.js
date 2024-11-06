@@ -39,7 +39,7 @@ window.onload = function () {
     {
       url: "pics/wife.png",
       credit: "Artwork by Ame",
-      link: "https://x.com/gxnkriskxllua",
+      link: "https://x.com/yusxki_",
     },
     {
       url: "pics/newicon.png",
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { id: "youtube", url: "https://www.youtube.com/c/HeroEyad" },
     { id: "twitter", url: "https://x.com/HeroEyad_" },
     { id: "github", url: "https://github.com/HeroEyad" },
-    { id: "bluesky", url: "https://bsky.app/profile/heroeyad.bsky.social" },
+    { id: "bluesky", url: "https://bsky.app/profile/heroeyad.xyz" },
   ];
 
   socialLinks.forEach((link) => {
