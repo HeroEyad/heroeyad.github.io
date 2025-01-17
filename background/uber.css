@@ -10,6 +10,7 @@ Removed alot unwanted shit from root
 :root{
     --DefaultTextFontFamily: "Patrick Hand", cursive;   
     --DefaultTextColor: #e2e2e2;
+    --BodyWrapperBackground: url('')
 }
    body {
       background-color: transparent; 
@@ -84,21 +85,21 @@ b, h2, h3 {
    border-bottom: 1px solid #6CB1E1 !important;
    border-top: 1px solid #6CB1E1 !important;
 }
-#HeadlineWrapper overlay h1 {
+/*#HeadlineWrapper overlay h1 {
    display: block;
    font-size: 0px;
    background-image: url("https://raw.githubusercontent.com/HeroEyad/heroeyad.github.io/refs/heads/main/background/herona.webp");
    background-repeat: no-repeat;
    filter: drop-shadow(21px 15px 10px black);
    background-position: center;
-   background-size: contain; /* Ensures the image scales within the max-width and max-height */
-   max-width: 1280px;  /* Limits the width */
-   max-height: 720px;  /* Limits the height */
+   background-size: contain; 
+   max-width: 1280px;  
+   max-height: 720px; 
    margin: 0;
    padding-bottom: 100px;
    word-break: break-word;
    box-sizing: content-box;
-}
+}*/
 
 #SoftwareKit {
    display: none !important;
