@@ -10,10 +10,11 @@ Removed alot unwanted shit from root
 :root{
     --DefaultTextFontFamily: "Patrick Hand", cursive;   
     --DefaultTextColor: #e2e2e2;
-   }
+    --BodyWrapperBackground: url("https://raw.githubusercontent.com/HeroEyad/heroeyad.github.io/refs/heads/main/background/herona.webp");
+}
    body {
       background-color: transparent; 
-      background-image: url('https://github.com/HeroEyad/myuberstyle/blob/main/assets/1337318.jpeg?raw=true');
+      background-image: url('https://raw.githubusercontent.com/HeroEyad/heroeyad.github.io/refs/heads/main/background/eydooremake.webp');
       background-size: cover; 
       background-position: center center;
       background-attachment: fixed; 
@@ -37,7 +38,11 @@ Removed alot unwanted shit from root
 }
 
 .Avatar.HasClearanceLevel {
-   box-shadow: 0 0 0 .125em #4B0082, 0 0 .75em #0000FF, 0 0 1.5em #00008B;
+   border-radius: 50%;
+}
+
+.Avatar.Online:after, .MemberLink.Online:after {
+   border-radius: 50%;
 }
 
 .Avatar img[alt="HeroEyad avatar"] {
@@ -61,6 +66,11 @@ Removed alot unwanted shit from root
 #ContentGrid div {
    border-radius: 10px;
 }
+
+.HasHdHovatar .HovatarImage, .HasHdHovatar:hover .AvatarImage, .HasHovatar .HovatarImage, .HasHovatar:hover .AvatarImage {
+   border-radius: 50%;
+}
+
 /*This contoles the looks of your modules such as identity, messages, online status, etc.*/
 .PageModule>.Content {
    background: #1d1d1d;
@@ -91,14 +101,6 @@ b, h2, h3 {
    box-sizing: content-box;
 }*/
 
-header#MainContentHeader {
-	background: url('https://images.alphacoders.com/133/thumb-1920-1339278.jpeg');
-	background-repeat: no-repeat;
-	background-position: center 20%;
-	background-size: cover -20%;
-}
-
-
 #SoftwareKit {
    display: none !important;
 }
@@ -118,6 +120,15 @@ header#MainContentHeader {
 
 
 
+.Content .AvatarImage {
+   border-radius: 50%;
+   overflow: hidden;
+}
+
+.Avatar .HasClearanceLevel {
+   border-radius: 50%;
+   overflow: hidden;
+}
 
 #PageFooter {
    border-bottom: 10px;
