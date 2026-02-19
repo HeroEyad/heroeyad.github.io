@@ -1,126 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HeroEyad_ | Coding Commissions</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/background/commissions.css">
 </head>
+
 <body>
 
-<div class="commission-card">
-    <div class="profile-header">
-        <img id="profilePicture" src="assets/pics/ocs/rhythm.jpg" alt="Profile Picture">
-        <div class="username">HeroEyad_</div>
-        <p class="text-muted small">Coding Commission Request</p>
-    </div>
+    <div class="commission-card">
+        <div class="profile-header">
+            <img id="profilePicture" src="assets/pics/ocs/rhythm.jpg" alt="Profile Picture">
+            <div class="username">HeroEyad_</div>
+            <p class="text-muted small">Coding Commission Request</p>
+        </div>
 
-    <div class="mb-3">
-        <label for="username">YOUR DISCORD/NAME</label>
-        <input type="text" id="username" class="form-control" placeholder="e.g. CodeMaster#0001">
-    </div>
+        <div class="mb-3">
+            <label for="username">YOUR DISCORD/NAME</label>
+            <input type="text" id="username" class="form-control" placeholder="e.g. CodeMaster#0001">
+        </div>
 
-    <div class="mb-3">
-        <label for="price">BUDGET ($)</label>
-        <input type="number" id="price" class="form-control" placeholder="50" min="0">
-        <div class="budget-warning">
-            <strong>⚠️ Note:</strong> Please do not underpay. Prices are negotiable via DMs once you send your Discord user and I friend you.
+        <div class="mb-3">
+            <label for="price">BUDGET ($)</label>
+            <input type="number" id="price" class="form-control" placeholder="50" min="0">
+            <div class="budget-warning">
+                <strong>⚠️ Note:</strong> Please do not underpay. Prices are negotiable via DMs once you send your
+                Discord user and I friend you.
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="serviceType">SERVICE TYPE</label>
+            <select id="serviceType" class="form-select">
+                <option value="Custom Menus">Custom Menus (Main, Freeplay, etc.)</option>
+                <option value="Mechanic/Modchart">Custom Mechanic / Modchart</option>
+                <option value="Optimization">Mod Optimization</option>
+                <option value="General Coding">General Coding / Other</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="needs">PROJECT DESCRIPTION</label>
+            <textarea id="needs" class="form-control" rows="4" placeholder="What can I build for you?"></textarea>
+        </div>
+
+        <div class="info-btn-group">
+            <button type="button" class="btn btn-outline-custom w-50" data-bs-toggle="modal"
+                data-bs-target="#termsModal">
+                Terms & Conditions
+            </button>
+            <button type="button" class="btn btn-outline-custom w-50" data-bs-toggle="modal"
+                data-bs-target="#enginesModal">
+                Engines
+            </button>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-submit" onclick="sendToWebhook()">Submit Request</button>
+
+        <div class="credit-footer">
+            Artwork by <a href="https://bsky.app/profile/bittofromdrawa.bsky.social" target="_blank">Bitto</a> | <a
+                href="https://heroeyad.dev/" target="_blank">heroeyad.dev</a>
         </div>
     </div>
 
-    <div class="mb-3">
-        <label for="needs">PROJECT DESCRIPTION</label>
-        <textarea id="needs" class="form-control" rows="4" placeholder="What can I build for you?"></textarea>
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="termsModalLabel">Terms and Conditions</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-sm">
+                    <p class="text-muted small mb-3"><em>When paying, you are agreeing to the following info before you
+                            order:</em></p>
+
+                    <h6>General Info</h6>
+                    <ul>
+                        <li><strong>Availability:</strong> I only work on Fridays (other days rarely, not for now).</li>
+                        <li><strong>Payment:</strong> Upfront or 50/50 split is okay.</li>
+                    </ul>
+
+                    <h6>I will NOT work on:</h6>
+                    <ul>
+                        <li>Sonic.exe mods</li>
+                        <li>Pibby/Corruption-styled mods</li>
+                        <li>NSFW or offensive content</li>
+                    </ul>
+
+                    <h6>Please do not:</h6>
+                    <ul>
+                        <li>Ask for constant progress updates.</li>
+                        <li>Expect me to accept just because the payment is high. I only join projects I'm genuinely
+                            interested in.</li>
+                    </ul>
+
+                    <h6>Psych Engine Specifics:</h6>
+                    <p class="small text-muted border-start border-2 border-warning ps-2">
+                        Payment will be a bit higher than normal (not going crazy) but saying this because I don't want
+                        to recompile every time I change something. That's why I prefer Codename Engine because it saves
+                        more time.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">I Understand</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="info-btn-group">
-        <button type="button" class="btn btn-outline-custom w-50" data-bs-toggle="modal" data-bs-target="#termsModal">
-            Terms & Conditions
-        </button>
-        <button type="button" class="btn btn-outline-custom w-50" data-bs-toggle="modal" data-bs-target="#enginesModal">
-            Engines
-        </button>
+    <div class="modal fade" id="enginesModal" tabindex="-1" aria-labelledby="enginesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="enginesModalLabel">Engines I Work With</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="mb-0 list-unstyled">
+                        <li class="mb-3">
+                            <strong class="text-success">✔ Codename Engine</strong>
+                            <span class="badge bg-success ms-2">Preferred</span>
+                        </li>
+                        <li>
+                            <strong class="text-warning">⚠ Psych Engine</strong>
+                            <p class="small text-muted mt-1 mb-0">(Check the Terms & Conditions regarding pricing for
+                                this engine)</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <button type="button" class="btn btn-primary btn-submit" onclick="sendToWebhook()">Submit Request</button>
-
-    <div class="credit-footer">
-        Artwork by <a href="https://bsky.app/profile/bittofromdrawa.bsky.social" target="_blank">Bitto</a> | <a href="https://heroeyad.dev/" target="_blank">heroeyad.dev</a>
-    </div>
-</div>
-
-<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title fw-bold" id="termsModalLabel">Terms and Conditions</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-sm">
-        <p class="text-muted small mb-3"><em>When paying, you are agreeing to the following info before you order:</em></p>
-        
-        <h6>General Info</h6>
-        <ul>
-            <li><strong>Availability:</strong> I only work on Fridays (other days rarely, not for now).</li>
-            <li><strong>Payment:</strong> Upfront or 50/50 split is okay.</li>
-        </ul>
-
-        <h6>I will NOT work on:</h6>
-        <ul>
-            <li>Sonic.exe mods</li>
-            <li>Pibby/Corruption-styled mods</li>
-            <li>NSFW or offensive content</li>
-        </ul>
-
-        <h6>Please do not:</h6>
-        <ul>
-            <li>Ask for constant progress updates.</li>
-            <li>Expect me to accept just because the payment is high. I only join projects I'm genuinely interested in.</li>
-        </ul>
-
-        <h6>Psych Engine Specifics:</h6>
-        <p class="small text-muted border-start border-2 border-warning ps-2">
-            Payment will be a bit higher than normal (not going crazy) but saying this because I don't want to recompile every time I change something. That's why I prefer Codename Engine because it saves more time.
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">I Understand</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="enginesModal" tabindex="-1" aria-labelledby="enginesModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title fw-bold" id="enginesModalLabel">Engines I Work With</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <ul class="mb-0 list-unstyled">
-            <li class="mb-3">
-                <strong class="text-success">✔ Codename Engine</strong> 
-                <span class="badge bg-success ms-2">Preferred</span>
-            </li>
-            <li>
-                <strong class="text-warning">⚠ Psych Engine</strong> 
-                <p class="small text-muted mt-1 mb-0">(Check the Terms & Conditions regarding pricing for this engine)</p>
-            </li>
-        </ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/buy.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/buy.js"></script>
 
 </body>
+
 </html>
